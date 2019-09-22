@@ -1,0 +1,23 @@
+{
+  "name": "stockclient",
+  "version": "1.0.0",
+  "description": "Desktop application",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fijon/creative.git"
+  },
+  "author": "huiqiangxu@126.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fijon/creative/issues"
+  },
+  "homepage": "https://github.com/Fijon/creative#readme",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  }
+}
