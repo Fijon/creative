@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,7 @@ public class CompanyController implements ICompanyService {
 	@Autowired
 	private CompanyRepository companyRepository;
 	
-	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value="/company/{id}", method = RequestMethod.GET)
 	@Override
 	public ResultDTO<CompanyDTO> findById(@PathVariable  Long id) {
