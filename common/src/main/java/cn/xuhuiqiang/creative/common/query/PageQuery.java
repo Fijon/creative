@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class PageQuery<T> implements Serializable {
 	
-	private Integer pageSize;
-	private Integer toPage;
+	private Integer pageSize = 10;
+	private Integer toPage = 1;
 	private T query;
 	public Integer getPageSize() {
 		return pageSize;

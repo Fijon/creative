@@ -1,6 +1,8 @@
 package cn.xuhuiqiang.creative.common.result;
 
-public abstract class PageResultDTO<T> extends ResultDTO<T> {
+import java.util.List;
+
+public  class PageResultDTO<T> extends ResultDTO<T> {
 	
 	/**
 	 * 
@@ -36,6 +38,14 @@ public abstract class PageResultDTO<T> extends ResultDTO<T> {
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
 	}
+	public static <T>  PageResultDTO<List<T>> getFailurePageResult(ErrorMsg errorMsg) {
+		PageResultDTO<List<T>> failure = new PageResultDTO<List<T>>();
+		failure.setErrorCode(errorMsg.code);
+		failure.setErrorMes(errorMsg.msg);
+		failure.setFailure(true);
+		return failure;
+	}
+	
 	
 	
 }

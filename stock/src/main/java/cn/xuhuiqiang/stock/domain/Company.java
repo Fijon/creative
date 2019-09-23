@@ -2,13 +2,17 @@ package cn.xuhuiqiang.stock.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Company extends BaseDO{
 
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6967665627519263506L;
+
 	@Column(name = "code")
 	private String code;
 	

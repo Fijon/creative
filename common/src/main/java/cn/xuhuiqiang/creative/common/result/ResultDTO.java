@@ -47,6 +47,7 @@ public  class ResultDTO<T> implements Serializable{
 		failure.setFailure(true);
 		return failure;
 	}
+	
 	public static <T> ResultDTO<T> getSuccessResult(T t) {
 		ResultDTO<T> success = new ResultDTO<T>();
 		success.setResult(t);
