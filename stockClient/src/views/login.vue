@@ -74,7 +74,6 @@ export default {
     },
 
     getData(event) {
-      console.log("getDate and request");
       var api = "http://localhost:8888/company/1";
       this.$http.get(api).then(
         function(response) {
