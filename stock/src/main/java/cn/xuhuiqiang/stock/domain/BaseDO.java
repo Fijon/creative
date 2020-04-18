@@ -8,6 +8,10 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class BaseDO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "id")
 	private Long id; 

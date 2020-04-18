@@ -21,6 +21,9 @@ public abstract class CheckUtil {
 	}
 	
 	public static <T> boolean isEmpty(PageQuery<T> page) {
-		return false;
+		if(null == page) {
+			return false;
+		}
+		return true;
 	}
 }

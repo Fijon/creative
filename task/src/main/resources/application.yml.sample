@@ -1,0 +1,15 @@
+server:
+  #端口号
+  port: 8899
+spring:
+  datasource:
+    url:  
+    username:  
+    password:  
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy:  org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true

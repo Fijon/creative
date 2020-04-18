@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>D:/log/task/demo.log</file>        
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/log/task/demo.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+ <appender name="monitorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>D:/log/task/monitor.log</file>        
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/log/task/monitor.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--log4jdbc -->
+    <logger name="jdbc.sqltiming" level="INFO"/>
+    <logger name="dao" level="DEBUG" >
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="monitor" level="info" >
+        <appender-ref ref="monitorFile" />
+    </logger>
+    
+    <root level="INFO">
+        <appender-ref ref="console" />
+        <appender-ref ref="rollingFile" /> 
+    </root>
+</configuration>

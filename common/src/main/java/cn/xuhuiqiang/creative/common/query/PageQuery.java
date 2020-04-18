@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class PageQuery<T> implements Serializable {
 	
+	
+	private static final long serialVersionUID = 1L;
 	private Integer pageSize = 10;
 	private Integer toPage = 1;
 	private T query;

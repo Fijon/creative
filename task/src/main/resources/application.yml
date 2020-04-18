@@ -1,0 +1,15 @@
+server:
+  #端口号
+  port: 8899
+spring:
+  datasource:
+    url: jdbc:mysql://47.106.110.50:14000/stock
+    username: Fijon
+    password: sql_FIJON_920630
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy:  org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true

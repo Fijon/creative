@@ -8,7 +8,7 @@ import java.util.List;
 import cn.xuhuiqiang.creative.common.query.PageQuery;
 import cn.xuhuiqiang.creative.common.result.PageResultDTO;
 import cn.xuhuiqiang.creative.common.result.ResultDTO;
-import cn.xuhuiqiang.stock.domain.Repurchased;
+import cn.xuhuiqiang.stock.client.dto.biz.RepurchasedDTO;
 
 /** 
 * @ClassName: IRepurchaseService 
@@ -18,6 +18,6 @@ import cn.xuhuiqiang.stock.domain.Repurchased;
 *  
 */
 public interface IRepurchaseService {
-	ResultDTO<Repurchased> findByCode(String code);
-	PageResultDTO<List<Repurchased>> findByName(PageQuery<String> name);
+	ResultDTO<RepurchasedDTO> findByCode(String code);
+	PageResultDTO<List<RepurchasedDTO>> findByName(PageQuery<String> name);
 }

@@ -1,17 +1,15 @@
-package cn.xuhuiqiang.stock;
+package cn.xuhuiqiang.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * Hello world!
  *
  */
 @SpringBootApplication
-@ServletComponentScan(basePackages = {"cn.xuhuiqiang.stock.filter"})
 public class App {
 	private static Logger log = LoggerFactory.getLogger(App.class);
 	private static Logger monitor = LoggerFactory.getLogger("monitor");
