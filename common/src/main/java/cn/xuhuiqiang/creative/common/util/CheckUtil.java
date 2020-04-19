@@ -1,10 +1,16 @@
 package cn.xuhuiqiang.creative.common.util;
 
+import java.util.List;
+
 import cn.xuhuiqiang.creative.common.query.PageQuery;
 
 public abstract class CheckUtil {
 	public static boolean isEmpty(Long id) {
 		return null == id || id == 0;
+	}
+	
+	public static <T> boolean isEmpty(List<T> list) {
+		return null == list || list.size() == 0;
 	}
 	
 	/**
@@ -25,5 +31,9 @@ public abstract class CheckUtil {
 			return false;
 		}
 		return true;
+	}
+	
+	public static boolean isNotEmpty(String param) {
+		return null != param && param.trim().length() >0;
 	}
 }

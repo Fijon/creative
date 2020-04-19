@@ -55,8 +55,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-				<groupId>cn.xuhuiqiang</groupId>
-				<artifactId>crawler</artifactId>
+			<groupId>cn.xuhuiqiang</groupId>
+			<artifactId>crawler</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

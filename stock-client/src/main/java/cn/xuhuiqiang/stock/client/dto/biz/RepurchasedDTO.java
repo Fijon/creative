@@ -1,7 +1,9 @@
 package cn.xuhuiqiang.stock.client.dto.biz;
 
 import cn.xuhuiqiang.stock.client.dto.BaseDTO;
+import lombok.Data; 
 
+@Data
 public class RepurchasedDTO extends BaseDTO {
 
 	/**

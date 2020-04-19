@@ -2,12 +2,16 @@ package cn.xuhuiqiang.stock.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
-public class Company extends BaseDO{
-
-	
-	
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Table(name="company")
+public class CompanyDO extends BaseDO{
 	/**
 	 * 
 	 */

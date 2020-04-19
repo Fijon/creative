@@ -2,9 +2,17 @@ package cn.xuhuiqiang.stock.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 
 @Entity
-public class Repurchased extends BaseDO{
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Table(name="Repurchase")
+public class RepurchasedDO extends BaseDO{
 
 	/**
 	 * 

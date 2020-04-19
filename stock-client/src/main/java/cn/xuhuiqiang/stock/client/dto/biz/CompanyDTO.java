@@ -1,7 +1,13 @@
 package cn.xuhuiqiang.stock.client.dto.biz;
 
 import cn.xuhuiqiang.stock.client.dto.BaseDTO;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Setter
+@Getter
+@ToString
 public class CompanyDTO extends BaseDTO {
 
 	/**
@@ -11,19 +17,5 @@ public class CompanyDTO extends BaseDTO {
 	
 	private String code;
 	private String name;
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
 
 }
