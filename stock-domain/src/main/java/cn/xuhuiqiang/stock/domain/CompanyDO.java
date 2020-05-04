@@ -4,12 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@Entity
-@Data
-@EqualsAndHashCode(callSuper = false)
+@Entity 
 @Table(name="company")
 public class CompanyDO extends BaseDO{
 	/**
@@ -62,12 +57,4 @@ public class CompanyDO extends BaseDO{
 	public void setLotSize(Integer lotSize) {
 		this.lotSize = lotSize;
 	}
-
-	@Override
-	public String toString() {
-		return "Company [id=" + this.getId() + ", code=" + code + ", name=" + name + ", region=" + region + ", lotSize=" + lotSize
-				+ "]";
-	}
-	
-
 }

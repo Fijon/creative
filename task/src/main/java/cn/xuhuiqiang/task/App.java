@@ -10,8 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import us.codecraft.webmagic.downloader.HttpClientDownloader;
-
 /**
  * Hello world!
  *
@@ -26,10 +24,12 @@ public class App {
 	private static Logger log = LoggerFactory.getLogger(App.class);
 	private static Logger monitor = LoggerFactory.getLogger("monitor");
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 		log.info("app start up success...");
 		monitor.info("app start up success");
-		
+	
 	}
+	
 }

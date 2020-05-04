@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = { "cn.xuhuiqiang.stock.domain" })
 @ServletComponentScan(basePackages = { "cn.xuhuiqiang.stock.filter" })
-@EnableJpaRepositories(basePackages = {"cn.xuhuiqiang.stock.repository"})
+@EnableJpaRepositories(basePackages = {"cn.xuhuiqiang.stock.repository"}) 
 @EnableJpaAuditing(setDates=true)
 public class App {
 
