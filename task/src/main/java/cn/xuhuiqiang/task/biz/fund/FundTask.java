@@ -21,16 +21,14 @@ public class FundTask {
 	//@Scheduled(cron = "0/1 * * * * ?")
 	public void runFundCrawlerRunnable() {
 		System.out.println("********first job is ok******");
-		fundCrawlerRunnable.setInitUrl(FundCrawlerRunnable.INIT_URL);
 		new Thread(fundCrawlerRunnable).start(); 
 	}
 	
-	@Scheduled(cron = "0/1 * * * * ?")
+	//@Scheduled(cron = "0/1 * * * * ?")
 	public void runFundSumCrawlerRunnable() {
 		
 		System.out.println("********FundSumCrawlerRunnable job is ok******");
 		if(init == 1) {
-		fundSumCrawlerRunnable.setInitUrl(FundSumCrawlerRunnable.INIT_URL);
 		new Thread(fundSumCrawlerRunnable).start();
 		init ++;
 		}

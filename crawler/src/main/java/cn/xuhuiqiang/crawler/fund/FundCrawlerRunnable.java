@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+import cn.xuhuiqiang.crawler.CrawlerRunnable;
 import cn.xuhuiqiang.creative.common.util.CheckUtil;
 import cn.xuhuiqiang.creative.common.util.DateUtil;
 import cn.xuhuiqiang.stock.domain.FundShareDO;
@@ -27,8 +28,11 @@ public class FundCrawlerRunnable extends CrawlerRunnable {
 	@Autowired
 	FundRepository fundRepository;
 
-	public static final String INIT_URL = "http://fund.ijijin.cn/data/Net/info/all_rate_desc_0_0_1_9999_0_0_0_jsonp_g.html";
+	private static final String INIT_URL = "http://fund.ijijin.cn/data/Net/info/all_rate_desc_0_0_1_9999_0_0_0_jsonp_g.html";
 
+	{
+		super.setInitUrl(INIT_URL);
+	}
 	@Override
 	protected void doCrawler(Page page) {
 		if (page.getUrl().regex("http://fund\\.10jqka\\.com\\.cn/[0-9]{6}/portfolioindex\\.html").match()) {

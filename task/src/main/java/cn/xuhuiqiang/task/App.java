@@ -19,17 +19,17 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaRepositories(basePackages = {"cn.xuhuiqiang.stock.repository"})
 @EnableJpaAuditing(setDates=true)
 @EnableScheduling
-@ComponentScan(basePackages = {"cn.xuhuiqiang.task.biz.fund", "cn.xuhuiqiang.crawler.fund"})
+@ComponentScan(basePackages = {"cn.xuhuiqiang.task.biz", "cn.xuhuiqiang.crawler"})
 public class App {
 	private static Logger log = LoggerFactory.getLogger(App.class);
 	private static Logger monitor = LoggerFactory.getLogger("monitor");
-
+	
 
 	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 		SpringApplication.run(App.class, args);
 		log.info("app start up success...");
 		monitor.info("app start up success");
-	
 	}
 	
 }

@@ -60,11 +60,15 @@ public class DemoController {
 		mesDO.setName("1");
 		mesDO.setType("test");
 		fundMesRepository.save(mesDO);
-	
-	      
+ 
 		return ResultDTO.getSuccessResult(1L);
     }
 	
+	@RequestMapping("/query/cube/{index}")
+    public ResultDTO<Long> addCube(@PathVariable("index")Integer index) {
+		 
+		return ResultDTO.getSuccessResult(1L);
+    }
 	
 
 }

@@ -13,6 +13,7 @@ package cn.xuhuiqiang.statuscode;
 public enum HttpStatusCode {
 	/**正常访问编码*/
 	CODE_200(200),
+	CODE_400(400),
 	CODE_403(403);
 	
 	private int code;

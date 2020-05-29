@@ -18,11 +18,11 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import cn.xuhuiqiang.crawler.CrawlerRunnable;
 import cn.xuhuiqiang.creative.common.util.CheckUtil;
 import cn.xuhuiqiang.stock.client.constant.FundTypeEnum;
 import cn.xuhuiqiang.stock.domain.FundMesDO;
 import cn.xuhuiqiang.stock.domain.FundShareDO;
-import cn.xuhuiqiang.stock.repository.FundMesRepository;
 import cn.xuhuiqiang.stock.repository.FundRepository;
 import us.codecraft.webmagic.Page;
 
@@ -30,19 +30,21 @@ import us.codecraft.webmagic.Page;
 public class FundSumCrawlerRunnable extends CrawlerRunnable {
 
 	/** 初始默认数值 */
-	public static final String INIT_URL = "http://fund.eastmoney.com/js/fundcode_search.js";
+	private static final String INIT_URL = "http://fund.eastmoney.com/js/fundcode_search.js";
 
 	private static final String SUP_URL_FORMAT = "http://fundf10.eastmoney.com/FundArchivesDatas.aspx?type=jjcc&code=%s&topline=200&year=%d";
 
-	@Autowired
-	private FundMesRepository fundMesRepository;
+	{
+		super.setInitUrl(INIT_URL);
+	}
 	@Autowired
 	private FundRepository fundRepository;
 	
 	private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.###%");
 
 
-	private final static List<Integer> YEAR = new ArrayList<Integer>() {
+	private final static List<Integer> YEAR = new ArrayList<Integer>() { 
+
 		{
 			add(2020);
 			//add(2019);
@@ -56,7 +58,7 @@ public class FundSumCrawlerRunnable extends CrawlerRunnable {
 			String rawText = page.getRawText().split("=")[1];
 			JSONArray jsonArray = JSONArray.parseArray(rawText.substring(0, rawText.length() - 1));
 			FundMesDO mes = null;
-			List<FundMesDO> data = new ArrayList();
+			List<FundMesDO> data = new ArrayList<>();
 			for (int i = 0; i < jsonArray.size(); i++) {
 				JSONArray array = jsonArray.getJSONArray(i);
 				mes = new FundMesDO();

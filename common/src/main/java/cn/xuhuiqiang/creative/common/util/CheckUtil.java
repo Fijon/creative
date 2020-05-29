@@ -1,10 +1,17 @@
 package cn.xuhuiqiang.creative.common.util;
 
+import java.util.Collection;
 import java.util.List;
 
 import cn.xuhuiqiang.creative.common.query.PageQuery;
 
 public abstract class CheckUtil {
+	
+	public static boolean isEmpty(Object obj) {
+		return null == obj;
+	}
+	
+	
 	public static boolean isEmpty(Long id) {
 		return null == id || id == 0;
 	}
@@ -31,6 +38,15 @@ public abstract class CheckUtil {
 			return false;
 		}
 		return true;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public static boolean isNotEmpty(Collection collection) {
+		if(null == collection) {
+			return false;
+		}
+		return !collection.isEmpty();
+		
 	}
 	
 	public static boolean isNotEmpty(String param) {
