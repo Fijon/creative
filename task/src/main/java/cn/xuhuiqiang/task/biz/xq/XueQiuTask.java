@@ -14,12 +14,11 @@ public class XueQiuTask {
 	private int init = 1;
 
 	//@Scheduled(cron = "7 */12 * * * ?")
-	@Scheduled(cron = "*/1 *  * * * ?")
+	@Scheduled(cron = "*/15 * * * *  ?")
 	public void runFundSumCrawlerRunnable() {
-
-		System.out.println("********FundSumCrawlerRunnable job is ok******");
 		if (init == 1) {
 			//UserAgent.initIP();
+			System.out.println("********FundSumCrawlerRunnable job is ok******");
 			cubeHistoryRunnable.setHostUrl("https://xueqiu.com");
 			System.out.println("Init IP success");
 			new Thread(cubeHistoryRunnable).start();

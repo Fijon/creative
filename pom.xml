@@ -13,10 +13,11 @@
 		<module>common</module>
 		<module>stock</module>
 		<module>music</module>
-		<module>stock-client</module> 
+		<module>stock-client</module>
 		<module>crawler</module>
 		<module>task</module>
 		<module>stock-domain</module>
+		<module>music-tools</module>
 	</modules>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -30,6 +31,7 @@
 		<spring-version>2.1.8.RELEASE</spring-version>
 		<webmagic-version>0.7.3</webmagic-version>
 	</properties>
+
 
 
 	<dependencyManagement>
@@ -162,6 +164,11 @@
 				<artifactId>guava</artifactId>
 				<version>19.0</version>
 			</dependency>
+			<dependency>
+				<groupId>net.jthink</groupId>
+				<artifactId>jaudiotagger</artifactId>
+				<version>2.2.3</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
@@ -207,6 +214,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>jaudiotagger-repository</id>
+			<url>https://dl.bintray.com/ijabz/maven</url>
+		</repository>
+
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>

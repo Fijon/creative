@@ -96,10 +96,14 @@ public abstract class CrawlerRunnable implements Runnable, PageProcessor {
 		if (CheckUtil.isEmpty(hostUrl)) {
  			return;
 		}
+		try {
 		WebDriver driver = new ChromeDriver();
 		driver.get(hostUrl);
 		setCookies(driver.manage().getCookies());
 		driver.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	protected void dealCode400(Page page) {

@@ -1,12 +1,10 @@
 package cn.xuhuiqiang.crawler.xueqiu;
 
-import java.io.File;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-import java.util.zip.Checksum;
 
 import org.openqa.selenium.Cookie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +36,7 @@ public class CubeHistoryRunnable extends CrawlerRunnable {
 	private XueQiuCubeDynamicRepository xueQiuCubeDynamicRepository;
 
 	{
-		super.setInitUrl(URL_FORMAT + "72138209");
+		super.setInitUrl(URL_FORMAT + "72138210");
 		super.site.getAcceptStatCode().add(400);
 	}
 
@@ -89,13 +87,7 @@ public class CubeHistoryRunnable extends CrawlerRunnable {
 		}catch (Exception e) {
 			System.out.println(toDb.toString());
 		}
-		try {
-			Random r = new Random();
-			int gap = r.nextInt(10) + 5;
-			Thread.sleep(gap * 1000);
-		} catch (Exception e) {
-			
-		}
+	
 		addNextRequest(page);
 	}
 	
@@ -104,16 +96,12 @@ public class CubeHistoryRunnable extends CrawlerRunnable {
 	@Override
 	protected void pre() {
 		super.pre();
-		//71665156
-		//72027922  72116577  72138209
 		XueQiuCubeDynamicDO lastRebalance = xueQiuCubeDynamicRepository.findTopByOrderByRebalanceIdDesc();
 		if(CheckUtil.isEmpty(lastRebalance)) {
-			super.setInitUrl(URL_FORMAT + "72138209");
+			super.setInitUrl(URL_FORMAT + "72138210");
 		}else {
-			super.setInitUrl(URL_FORMAT + (lastRebalance.getRebalanceId() - 1));
+			super.setInitUrl(URL_FORMAT + (lastRebalance.getRebalanceId() +1));
 		}
-		super.setInitUrl(URL_FORMAT + "72138209");
-		
 	}
 
 
@@ -127,12 +115,19 @@ public class CubeHistoryRunnable extends CrawlerRunnable {
 	private void addNextRequest(Page page) {
 		Long rebalanceId = parseReblanceId(page.getUrl().toString());
 		//rebalanceId++;
-		rebalanceId--;
+		rebalanceId++;
 		Request targetRequest = new Request(URL_FORMAT + rebalanceId);
 		if (CheckUtil.isNotEmpty(cookies)) {
 			for (Cookie item : cookies) {
 				targetRequest.addCookie(item.getName(), item.getValue());
 			}
+		}
+		try {
+			Random r = new Random();
+			int gap = r.nextInt(10) + 2;
+			Thread.sleep(gap * 1000);
+		} catch (Exception e) {
+			
 		}
 		page.addTargetRequest(targetRequest);
 	}
