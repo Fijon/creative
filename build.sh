@@ -1,4 +1,11 @@
-mkdir musicApp stockApp
+if [ ! -d "musicApp" ]; then
+  mkdir musicApp
+fi
+if [ ! -d "stockApp" ]; then
+  mkdir stockApp
+fi
+rm -rf ./musicApp/*
+rm -rf ./stockApp/*
 mvn clean package
 cp music/target/*.jar ./musicApp/
 cp -r music/target/lib ./musicApp/

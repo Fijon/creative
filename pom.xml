@@ -17,7 +17,6 @@
 		<module>crawler</module>
 		<module>task</module>
 		<module>stock-domain</module>
-		<module>music-tools</module>
 	</modules>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
