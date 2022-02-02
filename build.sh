@@ -2,7 +2,7 @@ appPath=${HOME}/app/
 musicAppPath=${appPath}/musicApp
 stockAppPath=${appPath}/stockApp
 if [ ! -d ${musicAppPath} ]; then
-  mkdir -p ${musicApp}
+  mkdir -p ${musicAppPath}
 fi
 if [ ! -d ${stockAppPath} ]; then
   mkdir -p ${stockAppPath}
