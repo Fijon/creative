@@ -1,4 +1,4 @@
-appPath=${HOME}/app/
+appPath=${HOME}/app
 musicAppPath=${appPath}/musicApp
 stockAppPath=${appPath}/stockApp
 if [ ! -d ${musicAppPath} ]; then

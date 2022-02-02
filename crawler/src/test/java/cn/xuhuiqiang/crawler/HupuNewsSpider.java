@@ -95,12 +95,12 @@ public class HupuNewsSpider implements PageProcessor {
 
 	}
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		
 		Spider.create(new HupuNewsSpider())
 				.addUrl("http://fund.ijijin.cn/data/Net/info/all_rate_desc_0_0_1_9999_0_0_0_jsonp_g.html").thread(3)
 				.run();
-	}
+	}*/
 }
 
 // 自定义实现Pipeline接口

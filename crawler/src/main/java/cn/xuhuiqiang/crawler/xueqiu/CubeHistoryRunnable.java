@@ -136,14 +136,14 @@ public class CubeHistoryRunnable extends CrawlerRunnable {
 		return Long.valueOf(url.split("=")[1].trim());
 	}
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 
 		CubeHistoryRunnable runnable = new CubeHistoryRunnable();
 		runnable.setHostUrl("https://xueqiu.com");
 		runnable.run();
- 
-	}
+
+	}*/
 
 }

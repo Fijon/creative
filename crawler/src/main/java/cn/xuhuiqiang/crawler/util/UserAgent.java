@@ -116,11 +116,6 @@ public abstract class UserAgent {
 	        return userAgent.get(s);
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(getViewAgent());
-		 
-	}
-	
 	public static int getIpSize(){
 		return agentIP.size();
 	}

@@ -147,10 +147,4 @@ public class FundSumCrawlerRunnable extends CrawlerRunnable {
 		}
 	}
 
-	public static void main(String[] args) {
-		FundSumCrawlerRunnable fcr = new FundSumCrawlerRunnable();
-		fcr.setInitUrl(INIT_URL);
-		fcr.run();
-	}
-
 }

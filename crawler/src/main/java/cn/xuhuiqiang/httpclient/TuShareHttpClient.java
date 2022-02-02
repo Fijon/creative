@@ -182,7 +182,7 @@ public class TuShareHttpClient {
 	}
 
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		String url = "http://api.waditu.com";
 
 		Map<String, Object> param = new HashMap<String, Object>();
@@ -196,5 +196,5 @@ public class TuShareHttpClient {
 		paramMap.put("fields", "ts_code,symbol,name,area,industry,list_date");
 
 		System.out.println(doPostWithJson(url, 		JSONObject.toJSONString(paramMap)));
-	}
+	}*/
 }

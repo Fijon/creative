@@ -67,17 +67,5 @@ public class CombinationRunnable extends CrawlerRunnable {
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-
-		CombinationRunnable runnable = new CombinationRunnable();
-		runnable.setHostUrl("https://xueqiu.com");
-		runnable.run();
-
-		File file = new File("./");
-		System.out.println(file.getAbsolutePath());
-
-	}
+	
 }
